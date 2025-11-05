@@ -18,7 +18,7 @@ def mostrar_mensagem_inicial():
     Exibe uma mensagem de boas-vindas ao desafio.
     Retorno esperado: string com a mensagem "Bem-vindo ao Desafio de Git!"
     """
-    pass
+    return print("Bem-vindo ao Desafio de Git!")
 
 def listar_comandos_git_basicos():
     """
@@ -27,7 +27,6 @@ def listar_comandos_git_basicos():
     ["git init", "git add", "git commit", "git status", "git push"]
     """
     pass
-
 
 def criar_mensagem_commit(funcao_nome):
     """
@@ -58,3 +57,5 @@ def gerar_relatorio_final(funcoes_concluidas):
     "Desafio concluído! 2 funções implementadas com sucesso."
     """
     pass
+
+mostrar_mensagem_inicial()
