@@ -29,15 +29,35 @@ def listar_comandos_git_basicos():
     comandos = ["git init", "git add", "git commit", "git status", "git push"]
     return print(f"Estes são alguns comandos básicos do git:\n >", comandos)
 
-def criar_mensagem_commit(funcao_nome):
+def criar_mensagens_commit_automaticas():
     """
-    Recebe o nome de uma função e retorna uma mensagem de commit padronizada.
-    Exemplo:
-    criar_mensagem_commit("listar_comandos_git_basicos") ->
-    "Implementa função listar_comandos_git_basicos"
+    Gera mensagens de commit automaticamente
+    para todas as funções do desafio (implementadas e pendentes).
     """
-    pass
+    funcoes = [
+        "mostrar_mensagem_inicial",
+        "listar_comandos_git_basicos",
+        "criar_mensagem_commit",
+        "verificar_tag_valida",
+        "gerar_relatorio_final"
+    ]
 
+    tags = [
+        "V1.0.1 - Primeira versão estável",
+        "V1.0.2 - Segunda versão estável",
+        "V1.0.3 - Terceira versão estável",
+        "V1.0.4 - Quarta versão estável",
+        "V1.0.5 - Quinta versão estável"
+    ]
+    
+    mensagens = [f"Função {f}" for f in funcoes]
+    tags_versoes = [f"Tag {t}" for t in tags]
+
+    # Junta as duas listas de forma correspondente
+    result = [f"{m} - {t}" for m, t in zip(mensagens, tags_versoes)]
+
+    # Imprime tudo apenas uma vez
+    print("\n".join(result))
 
 def verificar_tag_valida(tag):
     """
@@ -61,3 +81,4 @@ def gerar_relatorio_final(funcoes_concluidas):
 
 mostrar_mensagem_inicial()
 listar_comandos_git_basicos()
+criar_mensagens_commit_automaticas()
