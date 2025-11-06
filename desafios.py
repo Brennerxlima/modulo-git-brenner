@@ -78,9 +78,26 @@ def gerar_relatorio_final(funcoes_concluidas):
     ->
     "Desafio concluído! 2 funções implementadas com sucesso."
     """
-    pass
+    quantidade = len(funcoes_concluidas)
 
+    if quantidade == 0:
+        print("Nenhuma função foi implementada ainda.")
+    elif quantidade == 1:
+        print(f"Desafio em progresso! 1 função implementada com sucesso: {funcoes_concluidas[0]}.")
+    else:
+        nomes = ", ".join(funcoes_concluidas)
+        print(f"Desafio concluído! {quantidade} funções implementadas com sucesso: {nomes}.")
+
+
+# Chamadas das funções
 mostrar_mensagem_inicial()
 listar_comandos_git_basicos()
 criar_mensagens_commit_automaticas()
 print(verificar_tag_valida("v1.0.0"))
+gerar_relatorio_final([
+    "mostrar_mensagem_inicial",
+    "listar_comandos_git_basicos",
+    "criar_mensagens_commit_automaticas",
+    "verificar_tag_valida",
+    "gerar_relatorio_final"
+])
